@@ -3,11 +3,13 @@
 https://gitee.com/erzhongxmu/JEEWMS
 
 
-
 ### Description:
 
-The reportType parameter of the JeeWMS logController.do interface has an XSS vulnerability。
+CVE-2025-55834: The reportType parameter of the JeeWMS logController.do interface has an XSS vulnerability. Cross Site Scripting vulnerability in JeeWMS v.3.7 and before allows a remote attacker to obtain sensitive information via the logController.do component.
 
+### Affected Versions:
+
+JeeWMS - <=3.7
 
 
 ### Proof of Concept:
@@ -32,5 +34,9 @@ Start at line 185 of src/main/java/org/jeecgframework/web/system/controller/core
 
 
 `${reportType}` is inserted directly into JS with no other processing.
+
+
+### Discoverer:
+RrEeSeEeTt
 
  
